@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# See http://www.flintlib.org/downloads.html
-export FLINT_VERSION=2.7.1
+# See https://www.flintlib.org/downloads.html
+export FLINT_VERSION=3.1.2
 
-# See https://github.com/wbhart/mpir/commits/master for updates...
-export MPIR_VERSION=b3367eb13eca95b3a204beaca5281a2c3b4c66a6
+# See https://gmplib.org/download/gmp
+export GMP_VERSION=6.3.0
 
 # See https://www.mpfr.org/mpfr-current/#download
-export MPFR_VERSION=4.1.0
+export MPFR_VERSION=4.2.1
 
 export BUILD=`pwd`/build
 export PREFIX=$BUILD/local

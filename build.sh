@@ -6,6 +6,6 @@ set -ev
 rm -rf $BUILD dist
 mkdir $BUILD dist
 
-./build-mpir.sh
+./build-gmp.sh
 ./build-mpfr.sh
 ./build-flint.sh
