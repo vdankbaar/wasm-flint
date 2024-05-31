@@ -46,6 +46,6 @@ Run the following from the wasm-flint root directory:
 $ BUILD=`pwd`/build
 $ PREFIX=$BUILD/local
 $ emcc build/flint-3.1.2/examples/factor_polynomial.c -o factor_polynomial.js -s INITIAL_MEMORY=2146435072 -L$PREFIX/lib -I$PREFIX/include/flint -I$PREFIX/include -lflint -lmpfr -lgmp
-$ node factor_polynomials.js x^2-1
+$ node factor_polynomial.js x^2-1
 ```
 Returns: x^2-1 = 1*(x+1)^1*(x-1)^1
