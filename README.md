@@ -14,7 +14,7 @@ This should take less than a half hour.  They get installed into `build/local` .
 
 ## Test a program using FLINT
 
-There are examples in `build/flint-2.7.1/examples` .  For example,  to build `primegen`, do this:
+There are examples in `build/flint-3.1.2/examples` .  For example,  to build `primegen`, do this:
 
 ```sh
 $ emcc primegen.c -o primegen.js -L$PREFIX/lib -I$PREFIX/include/flint -I$PREFIX/include -lflint -lmpfr -lgmp
@@ -36,3 +36,16 @@ real    0m1.429s
 ```
 
 Note: use the option `-s INITIAL_MEMORY=2146435072` to `emcc` if you want to use more than a tiny amount of RAM.
+
+## Compiling and running the factor_polynomial example
+
+Note: First be sure to activate emscripten and add it to your PATH in the current shell if it isn't already.
+
+Run the following from the wasm-flint root directory:
+```sh
+$ BUILD=`pwd`/build
+$ PREFIX=$BUILD/local
+$ emcc build/flint-3.1.2/examples/factor_polynomial.c -o factor_polynomial.js -s INITIAL_MEMORY=2146435072 -L$PREFIX/lib -I$PREFIX/include/flint -I$PREFIX/include -lflint -lmpfr -lgmp
+$ node factor_polynomials.js x^2-1
+```
+Returns: x^2-1 = 1*(x+1)^1*(x-1)^1
